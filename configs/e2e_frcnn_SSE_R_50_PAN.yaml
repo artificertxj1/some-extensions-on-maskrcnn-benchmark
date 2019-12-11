@@ -1,0 +1,60 @@
+MODEL:
+  META_ARCHITECTURE: "GeneralizedRCNN"
+  WEIGHT: "catalog://ImageNetPretrained/MSRA/R-50"
+  BACKBONE:
+    CONV_BODY: "R-50-PAN"
+    FREEZE_CONV_BODY_AT: -1
+
+  RESNETS:
+    BACKBONE_OUT_CHANNELS: 256
+    STRIDE_IN_1X1: False
+    TRANS_FUNC: "BottleneckWithGN"
+    STEM_FUNC: "StemWithGN"
+    STAGE_WITH_CBAM: (True, True, True, True)
+    GCB_RATIO: 0.25
+
+
+  FPN:
+    USE_GN: True
+  RPN:
+    USE_FPN: True
+    ANCHOR_SIZES: (16, 32, 64, 128, 256)
+    ANCHOR_STRIDE: (4, 8, 16, 32, 64)
+    PRE_NMS_TOP_N_TRAIN: 2000
+    PRE_NMS_TOP_N_TEST: 1000
+    POST_NMS_TOP_N_TRAIN: 1000
+    POST_NMS_TOP_N_TEST: 1000
+    FPN_POST_NMS_TOP_N_TEST: 1000
+    MIN_SIZE: 10
+  ROI_HEADS:
+    USE_FPN: True
+  ROI_BOX_HEAD:
+    USE_GN: True
+    POOLER_RESOLUTION: 7
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    POOLER_SAMPLING_RATIO: 2
+    FEATURE_EXTRACTOR: "PAN2MLPFeatureExtractor"
+    PREDICTOR: "PANPredictor"
+    SAMPLING_METHOD: "random"
+INPUT:
+  BRIGHTNESS: 0.1
+  SATURATION: 0.2
+  CONTRAST: 0.2
+  HUE: 0.0
+DATASETS:
+  TRAIN: ("tct_train", )
+  TEST: ("tct_test", )
+DATALOADER:
+  SIZE_DIVISIBILITY: 32
+SOLVER:
+  BASE_LR: 0.002
+  WEIGHT_DECAY: 0.0001
+  STEPS: (280000, 300000)
+  MAX_ITER: 320000
+  IMS_PER_BATCH: 8
+  CHECKPOINT_PERIOD: 10000
+TEST:
+  BBOX_AUG:
+    ENABLED: False
+    H_FLIP: False
+OUTPUT_DIR: "/home/../data/tct/Models/TorchModels/ssenet50_pan/no_dcn"
