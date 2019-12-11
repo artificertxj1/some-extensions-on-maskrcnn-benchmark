@@ -14,5 +14,5 @@ This repository contains some extension works on original maskrcnn benchmark rep
 10. negative sample training 
 11. OHEM (in process)
 
-If you have any questions, start an issue. I will try my best to answer them.
+If you have any questions, start an issue. I will try my best to answer them. The training/inferencing config files should be more helpful with implmenting the code. If needed, I can upload some backbone models pre-trained on ImageNet.
 
