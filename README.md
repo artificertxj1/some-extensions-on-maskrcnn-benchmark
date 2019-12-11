@@ -1,6 +1,6 @@
 # An exntension of maskrcnn benchmark on object detection
 
-This repository contains some extension works on original maskrcnn benchmark repo. Below is a list of modules added.
+This repository contains some extension works on the original maskrcnn benchmark repo. Below is a list of modules added.
 
 1. FCOS (https://arxiv.org/abs/1904.01355)
 2. cosine anealing learning step with warm up (https://arxiv.org/abs/1812.01187)
@@ -14,5 +14,5 @@ This repository contains some extension works on original maskrcnn benchmark rep
 10. negative sample training 
 11. OHEM (in process)
 
-If you have any questions, start an issue. I will try my best to answer them. The training/inferencing config files should be more helpful with implmenting the code. If needed, I can upload some backbone models pre-trained on ImageNet.
+If you have any questions, please start an issue. I will try my best to answer them. The training/inferencing config files should be more helpful with digging into codes. Upon request, I can upload some backbone models which are pre-trained on ImageNet.
 
