@@ -1,6 +1,8 @@
 # An extension of maskrcnn benchmark on object detection
 
-This repository contains some extension works on the original maskrcnn benchmark repo. Below is a list of modules added.
+This repository contains some extension works on the original maskrcnn benchmark repo at https://github.com/facebookresearch/maskrcnn-benchmark. You can pick the module you need and add them into the original maskrcnn repo for your research or product with no need of re-setup.
+
+Below is a list of modules added.
 
 1. FCOS (https://arxiv.org/abs/1904.01355)
 2. cosine anealing learning step with warm up (https://arxiv.org/abs/1812.01187)
