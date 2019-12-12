@@ -1,4 +1,4 @@
-# An exntension of maskrcnn benchmark on object detection
+# An extension of maskrcnn benchmark on object detection
 
 This repository contains some extension works on the original maskrcnn benchmark repo. Below is a list of modules added.
 
